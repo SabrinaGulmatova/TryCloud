@@ -20,8 +20,11 @@ public class FilesModulePage {
     @FindBy (id = "submit-form")
     public WebElement loginButton;
 
-    @FindBy (xpath = "//a[*='Files']")
+    @FindBy (xpath = "(//li[@data-id='files']/a)[1]")
     public WebElement filesButton;
+
+    @FindBy (xpath = "//label[@for='select_all_files']")
+    public WebElement selectAllCheckBox;
 
     public void login(String username, String password){
         inputUsername.sendKeys(username);

@@ -28,4 +28,13 @@ public class FilesModuleStepDef {
         Assert.assertEquals(expectedTitle,actualTitle);
     }
 
+    @When("user click the top-left checkbox of the table")
+    public void user_click_the_top_left_checkbox_of_the_table() {
+        filesModulePage.selectAllCheckBox.click();
+    }
+    @Then("verify all the files are selected")
+    public void verify_all_the_files_are_selected() {
+        filesModulePage.selectAllCheckBox.isSelected();
+    }
+
 }
