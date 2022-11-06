@@ -15,7 +15,7 @@ public class FilesModuleStepDef {
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-        filesModulePage.login("User6","Userpass123");
+        filesModulePage.login(ConfigurationReader.getProperty("username1"),ConfigurationReader.getProperty("password"));
     }
     @When("the user clicks the Files module")
     public void the_user_clicks_the_files_module() {
