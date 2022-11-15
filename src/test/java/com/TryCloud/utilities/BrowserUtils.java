@@ -23,18 +23,18 @@ public class BrowserUtils {
      * @param seconds
      */
     public static void sleep(int seconds){
-         // 1 second = 1000 millis
+        // 1 second = 1000 millis
         // millis = seconds*1000
-         try {
-             Thread.sleep(seconds*1000);
-         }catch(InterruptedException e){
-             e.printStackTrace();
-             System.out.println("Exception happened in sleep method!");
-         }
-     }
+        try {
+            Thread.sleep(seconds*1000);
+        }catch(InterruptedException e){
+            e.printStackTrace();
+            System.out.println("Exception happened in sleep method!");
+        }
+    }
 
 
-     //Method info:
+    //Method info:
     //• Name: verifyTitle()
     //• Return type: void
     //• Arg1: WebDriver
@@ -49,8 +49,13 @@ public class BrowserUtils {
     }
 
     public static void waitForInvisibilityOf(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriverPool(),15);
         wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    public static void waitForVisibilityOf(WebElement element){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriverPool(),15);
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
 
