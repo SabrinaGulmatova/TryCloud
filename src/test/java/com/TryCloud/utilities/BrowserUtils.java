@@ -49,12 +49,12 @@ public class BrowserUtils {
     }
 
     public static void waitForInvisibilityOf(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriverPool(),15);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public static void waitForVisibilityOf(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriverPool(),15);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),15);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 

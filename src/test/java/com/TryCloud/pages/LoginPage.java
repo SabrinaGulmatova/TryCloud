@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     public LoginPage(){
-        PageFactory.initElements(Driver.getDriverPool(),this);
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(xpath = "//input[@id='user']")
@@ -21,7 +21,7 @@ public class LoginPage {
     public WebElement submitBtn;
 
     public void login(String user,String pass){
-        Driver.getDriverPool().get(ConfigurationReader.getProperty("env"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         username.sendKeys(user);
         password.sendKeys(pass);
         submitBtn.click();

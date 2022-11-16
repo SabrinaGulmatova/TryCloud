@@ -25,7 +25,7 @@ public class Driver {
     /*
     Create re-usable utility method which will return same driver instance when we call it.
      */
-    public static WebDriver getDriverPool(){
+    public static WebDriver getDriver(){
 
         if(driverPool.get() == null){  // if driver/browser was never opened
 

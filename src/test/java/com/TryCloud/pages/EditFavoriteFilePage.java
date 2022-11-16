@@ -10,7 +10,7 @@ import java.util.List;
 public class EditFavoriteFilePage {
     //First scenario start here
     public EditFavoriteFilePage(){
-        PageFactory.initElements(Driver.getDriverPool(),this);
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(xpath = "//input[@id='user']")//login username
