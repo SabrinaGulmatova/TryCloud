@@ -18,7 +18,7 @@ public class tryCloudTalks_StepDef {
     @Given("user on the dashboard  page")
     public void user_on_the_dashboard_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-        tryCloudPageW.login();
+        tryCloudPageW.loginW();
 
 
 

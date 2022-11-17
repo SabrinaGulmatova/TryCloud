@@ -77,7 +77,7 @@ public class TryCloudPageW {
 
 
 
-    public void login () {
+    public void loginW() {
         inputUsername.sendKeys("user7");
         inputPassword.sendKeys("Userpass123" + Keys.ENTER);
 
