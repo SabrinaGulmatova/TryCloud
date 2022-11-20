@@ -8,49 +8,20 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
 
-
     @After
-    public void teardownScenario(Scenario scenario){
+    public void teardownScenario(Scenario scenario){  //pixels are coming byte by byte
         // We will implement taking screenshot in this method
-        //System.out.println("It will be closing browser using cucumber @After each scenario");
+        // System.out.println("It will be closing browser using cucumber @After each scenario");
+        //This part is very important for taking some screenshots
 
-        if (scenario.isFailed()) {
+
+        if (scenario.isFailed()){
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenshot, "image/png", scenario.getName());
+            scenario.attach(screenshot,"image/png",scenario.getName());
         }
-
         Driver.closeDriver();
-
-    }
-
-    //@Before
-    public void setupScenario(){
-        System.out.println("Setting up browser using cucumber @Before each scenario");
-        Driver.getDriver().get("URL of your app");
     }
 
 
-
-    //@Before (value = "@login", order=2)
-    public void setupForLogin(){
-        // If you want any code to run before any specific feature/scenario,
-        // you can use value= "@tagname" to determine this
-        System.out.println("Setting up browser using cucumber @Before @login scenario");
-    }
-
-    //@Before (value="@db" , order=3)
-    public void setupDatabaseScenario(){
-
-    }
-
-    //@BeforeStep
-    public void setupScenarioStep(){
-        System.out.println("Setting up browser using cucumber @Before each scenario step");
-    }
-
-    // @BeforeStep
-    public void setupScenarioStepForLogin(){
-        System.out.println("Setting up browser using cucumber @Before each scenario step for login");
-    }
 
 }
